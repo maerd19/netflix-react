@@ -1,6 +1,7 @@
-import React from "react";
-import jumboData from "./fixtures/jumbo";
-import Jumbotron from "./components/jumbotron";
+/* eslint-disable react/jsx-filename-extension */
+import React from 'react';
+import jumboData from './fixtures/jumbo.json';
+import Jumbotron from './components/jumbotron';
 
 export default function App() {
   return (
@@ -10,9 +11,9 @@ export default function App() {
           <Jumbotron.Pane>
             <Jumbotron.Title>{item.title}</Jumbotron.Title>
             <Jumbotron.SubTitle>{item.subTitle}</Jumbotron.SubTitle>
-          </Jumbotron.Pane>          
+          </Jumbotron.Pane>
           <Jumbotron.Pane>
-            <Jumbotron.Image src={item.image} alt={item.alt}/>
+            <Jumbotron.Image src={item.image} alt={item.alt} />
           </Jumbotron.Pane>
         </Jumbotron>
       ))}
