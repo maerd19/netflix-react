@@ -17,7 +17,7 @@ export const Inner = styled.div`
   margin: auto;
   width: 100%;
 
-  media (max-width: 1000px) {
+  @media (max-width: 1000px) {
     flex-direction: column;
   }
 `;
