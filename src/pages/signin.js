@@ -12,18 +12,18 @@ import * as ROUTES from '../constants/routes';
 export default function Signip() {
   const history = useHistory();
   const { firebase } = useContext(FirebaseContext);
-  const [emailAddres, setEmailAddress] = useState('');
+  const [emailAddress, setEmailAddress] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
-  const isInvalid = password === '' || emailAddres === '';
+  const isInvalid = password === '' || emailAddress === '';
   const handleSignIn = (event) => {
     event.preventDefault();
 
     // firebase work here!
     firebase
       .auth()
-      .signInWithEmailAndPassword(emailAddres, password)
+      .signInWithEmailAndPassword(emailAddress, password)
       .then(() => {
         // push to the browse page
         history.push(ROUTES.BROWSE);
@@ -45,7 +45,7 @@ export default function Signip() {
           <Form.Base onSubmit={handleSignIn} method="POST">
             <Form.Input
               placeholder="Email address"
-              value={emailAddres}
+              value={emailAddress}
               onChange={({ target }) => setEmailAddress(target.value)}
             />
             <Form.Input
