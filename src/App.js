@@ -7,7 +7,7 @@ import * as ROUTES from './constants/routes';
 export default function App() {
   return (
     <Router>
-      <Route exact path={ROUTES.BROWSWE}>
+      <Route exact path={ROUTES.BROWSE}>
         <Browse />
       </Route>
       <Route exact path={ROUTES.SIGN_IN}>
