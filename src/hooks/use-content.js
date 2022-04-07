@@ -5,7 +5,6 @@ export default function useContent(target) {
   const [content, setContent] = useState([]);
   // Firebase is used to access the collection (either films or series)
   const { firebase } = useContext(FirebaseContext);
-
   useEffect(() => {
     firebase
       .firestore()
