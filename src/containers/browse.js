@@ -4,11 +4,12 @@
 /* eslint-disable react/jsx-filename-extension */
 /* eslint-disable import/prefer-default-export */
 import React, { useContext, useState, useEffect } from 'react';
-import { Card, Loading, Header } from '../components';
+import { Card, Loading, Header, Player } from '../components';
 import * as ROUTES from '../constants/routes';
 import logo from '../logo.svg';
 import { FirebaseContext } from '../context/firebase';
 import { SelectProfileContainer } from './profiles';
+import { FooterContainer } from './footer';
 
 export function BrowseContainer({ slides }) {
   const [category, setCategory] = useState('series');
@@ -102,14 +103,15 @@ export function BrowseContainer({ slides }) {
               ))}
             </Card.Entities>
             <Card.Feature category={category}>
-              {/* <Player>
+              <Player>
                 <Player.Button />
                 <Player.Video src="/videos/bunny.mp4" />
-              </Player> */}
+              </Player>
             </Card.Feature>
           </Card>
         ))}
       </Card.Group>
+      <FooterContainer />
     </>
   ) : (
     <SelectProfileContainer user={user} setProfile={setProfile} />
